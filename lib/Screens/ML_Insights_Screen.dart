@@ -86,11 +86,11 @@ class _MLInsightsScreenState extends State<MLInsightsScreen> {
             const Text('Expense Analysis',
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
             const SizedBox(height: 16),
-            _buildRow('Total Expenses', '₹${expenses['total']?.toStringAsFixed(2) ?? '0.00'}'),
-            _buildRow('Average', '₹${expenses['avg']?.toStringAsFixed(2) ?? '0.00'}'),
+            _buildRow('Total Expenses', '₹${(expenses['total'] as num?)?.toStringAsFixed(2) ?? '0.00'}'),
+            _buildRow('Average', '₹${(expenses['avg'] as num?)?.toStringAsFixed(2) ?? '0.00'}'),
             _buildRow('Transactions', '${expenses['count'] ?? 0}'),
             if (expenses['potential_savings'] != null)
-              _buildRow('Potential Savings', '₹${expenses['potential_savings']?.toStringAsFixed(2) ?? '0.00'}',
+              _buildRow('Potential Savings', '₹${(expenses['potential_savings'] as num?)?.toStringAsFixed(2) ?? '0.00'}',
                   color: Colors.green),
             if (expenses['recommendations'] != null) ...[
               const SizedBox(height: 16),
@@ -124,7 +124,7 @@ class _MLInsightsScreenState extends State<MLInsightsScreen> {
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
             const SizedBox(height: 16),
             _buildRow('Risk Profile', stocks['risk'] ?? 'moderate'),
-            _buildRow('Recommended Investment', '₹${stocks['investment']?.toStringAsFixed(2) ?? '0.00'}'),
+            _buildRow('Recommended Investment', '₹${(stocks['investment'] as num?)?.toStringAsFixed(2) ?? '0.00'}'),
             const SizedBox(height: 16),
             if (stocks['stocks'] != null)
               ...(stocks['stocks'] as List).map((stock) => ListTile(

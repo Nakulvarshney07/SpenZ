@@ -5,6 +5,7 @@ import 'Settings.dart';
 import 'package:provider/provider.dart';
 import 'package:spendz/utils.dart';
 import 'package:spendz/Charts/bar_chart.dart' as chart; // alias import
+import 'ML_Insights_Screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -90,6 +91,19 @@ class _HomeScreenState extends State<HomeScreen> {
                   title: Text("SpenZ"),
                 ),
                 actions: [
+                  IconButton(
+                    icon: const Icon(Icons.psychology),
+                    iconSize: 30,
+                    tooltip: 'AI Insights',
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const MLInsightsScreen(),
+                        ),
+                      );
+                    },
+                  ),
                   IconButton(
                     icon: const Icon(Icons.account_circle_rounded),
                     iconSize: 30,
