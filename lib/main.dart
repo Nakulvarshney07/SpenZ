@@ -4,6 +4,7 @@ import 'Screens/tabs_manager.dart';
 import 'package:provider/provider.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
+
 Future<void> main() async {
   // Ensure binding is initialized before calling any async native code.
   WidgetsFlutterBinding.ensureInitialized();
@@ -14,8 +15,6 @@ Future<void> main() async {
   // Open the boxes you use in the app. Adjust names if your provider expects different names.
   await Hive.openBox("expense_database");
   await Hive.openBox("transactions"); // open transactions box too (safe even if unused)
-
-
 
   // Optional: print to verify box keys (debug)
   print('expense_database keys: ${Hive.box('expense_database').keys.toList()}');
